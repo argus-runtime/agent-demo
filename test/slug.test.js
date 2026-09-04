@@ -46,6 +46,10 @@ test("slugify truncates at a preceding word boundary", () => {
   assert.equal(slugify("hello wonderful world", { maxLength: 12 }), "hello");
 });
 
+test("slugify truncates when maxLength is shorter than the first word", () => {
+  assert.equal(slugify("hello world", { maxLength: 3 }), "hel");
+});
+
 test("slugify truncates a single long word when no boundary exists", () => {
   assert.equal(slugify("supercalifragilistic", { maxLength: 10 }), "supercalif");
 });
