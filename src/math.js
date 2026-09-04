@@ -6,7 +6,7 @@
  */
 export function sumTo(n) {
   let total = 0;
-  for (let i = 1; i < n; i++) {   // BUG (issue #1): should be i <= n — this excludes n
+  for (let i = 1; i <= n; i++) {
     total += i;
   }
   return total;
